@@ -13,6 +13,7 @@ class Information(models.Model):
 
 class Eduction(models.Model):
     university_name=models.CharField(max_length=100)
+    position = models.CharField(max_length=50, default="کارشناسی کامپیوتر")
     data=models.CharField(max_length=50)
     text=models.TextField()
 
@@ -22,6 +23,7 @@ class Eduction(models.Model):
 
 class Working(models.Model):
     job_name=models.CharField(max_length=100)
+    position=models.CharField(max_length=50,default="توسعه دهنده بک اند")
     data=models.CharField(max_length=50)
     text=models.TextField()
 
@@ -40,7 +42,7 @@ class Maharat(models.Model):
         return self.name
 
 
-class About_us(models.Model):
+class Coutact_us(models.Model):
 
     name=models.CharField(max_length=100)
     email=models.EmailField()
