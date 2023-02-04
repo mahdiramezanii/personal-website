@@ -40,9 +40,7 @@ class HomeView(View):
 
             Coutact_us.objects.create(name=name,email=email,text=text)
 
-            return JsonResponse({"response":"پیام مشا ارسال شد"})
+            return JsonResponse({"response":"پیام شما ارسال شد"})
 
         else:
-            print("nashod")
-
             return redirect("Home_app:Home")

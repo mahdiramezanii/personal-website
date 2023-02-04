@@ -497,24 +497,24 @@
                                 اگر پیشنهادی ، پروژه ای دارید یا حتی می خواهید سلام کنید .. لطفا فرم زیر را پر کنید و به
                                 زودی به شما پاسخ می دهم.
                             </p>
-                            <form class="contactform" method="post" id="post-form1">
+                            <form  method="post" id="post-form">
                                 {% csrf_token %}
                                 <div class="row ">
                                     <!-- Name Field Starts -->
                                     <div class="form-group col-xl-6 "><i class="fa fa-user prefix"></i>
-                                        <input id="text2" type="text" class="form-control"
+                                        <input  type="text" id="name" class="form-control"
                                                placeholder="نام و نام خانوادگی " required>
                                     </div>
                                     <!-- Name Field Ends -->
                                     <!-- Email Field Starts -->
                                     <div class="form-group col-xl-6 "><i class="fa fa-envelope prefix"></i>
-                                        <input id="text3" name="email" class="form-control"
+                                        <input type="email" id="email" class="form-control"
                                                placeholder="ایمیل شما" required>
                                     </div>
                                     <!-- Email Field Ends -->
                                     <!-- Comment Textarea Starts -->
                                     <div class="form-group col-xl-12 "><i class="fa fa-comments prefix"></i>
-                                        <textarea id="text1" class="form-control"
+                                        <textarea id="text" class="form-control"
                                                   placeholder="پیام شما" required></textarea>
                                     </div>
                                     <!-- Comment Textarea Ends -->
@@ -525,9 +525,7 @@
                                             class="fa fa-send"></i> ارسال پیام </span></button>
                                 </div>
                                 <!-- Submit Form Button Ends -->
-                                <div class="form-message "><span
-                                        class="output_message text-center font-family-irbold "></span>
-                                </div>
+
                             </form>
                         </div>
                         <!-- Contact Form Ends -->
@@ -675,34 +673,35 @@
 <!-- Preloader Ends -->
 
 <!-- Template JS Files -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{% static "js/jquery-2.2.4.min.js" %}"></script>
 <script src="{% static "js/jquery.animatedheadline.js" %}"></script>
 <script src="{% static "js/bootstrap.min.js" %}"></script>
 <script src="{% static "js/transition.js" %}"></script>
-<!-- Live Style Switcher JS File - only demo -->
+
 <script src="{% static "js/styleswitcher.js" %}"></script>
-<!-- Main JS Initialization File -->
+
 <script src="{% static "js/custom.js" %}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <script>
 
-    $(document).on('submit', '#post-form1', function (e) {
+    $(document).on('submit', '#post-form', function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
             url: '{% url "Home_app:Home" %}',
             data: {
 
-                text: $('#text1').val(),
-                name: $('#text2').val(),
-                email: $('#text3').val(),
+                text: $('#text').val(),
+                name: $('#name').val(),
+                email: $('#email').val(),
                 csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
                 action: 'post'
             },
 
             success: function (json) {
-                document.getElementById("post-form1").reset();
+                document.getElementById("post-form").reset();
                 Swal.fire(
                     'بسیار عالی !',
                     json["response"],
