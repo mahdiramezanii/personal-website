@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>وبسایت شخصی مهدی رمضانی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- Template CSS Files -->
+    <link type="text/css" media="all" href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link type="text/css" media="all" href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link type="text/css" media="all" href="{% static "css/style.css" %}" rel="stylesheet">
+    <link type="text/css" media="all" href="{% static "css/skins/yellow.css" %}" rel="stylesheet">
+
+    <!-- Live Style Switcher - demo only -->
+	<link rel="alternate stylesheet" type="text/css" title="blue" href="{% static "css/skins/blue.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="goldenrod" href="{% static "css/skins/goldrenrod.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="green" href="{% static "css/skins/green.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="magenta" href="{% static "css/skins/magenta.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="orange" href="{% static "css/skins/orange.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="red" href="{% static "css/skins/red.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="yellow" href="{% static "css/skins/yellow.css" %}" />
+    <link rel="alternate stylesheet" type="text/css" title="yellowgreen" href="{% static "css/skins/yellowgreen.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/styleswitcher.css" %}" />
+
+    <!-- Template JS Files -->
+    <script src="{% static "js/modernizr.js" %}"></script>
+
+</head>
+
+<body class="dark blog">
+	<div class="page">
+    <!-- Live Style Switcher Starts - demo only -->
+        <div id="switcher" class="">
+            <div class="content-switcher">
+                <h4>تعویض سبک</h4>
+                <ul>
+					<li>
+                        <a href="#" onclick="setActiveStyleSheet('blue');" title="blue" class="color"><img src="{% static "img/styleswitcher/blue.png" %}" alt="blue" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('red');" title="red" class="color"><img src="{% static "img/styleswitcher/red.png" %}" alt="red" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('goldenrod');" title="goldenrod" class="color"><img src="{% static "img/styleswitcher/goldenrod.png" %}" alt="goldenrod" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('magenta');" title="magenta" class="color"><img src="{% static "img/styleswitcher/magenta.png" %}" alt="magenta" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('yellowgreen');" title="yellowgreen" class="color"><img src="{% static "img/styleswitcher/yellowgreen.png" %}" alt="yellowgreen" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('orange');" title="orange" class="color"><img src="{% static "img/styleswitcher/orange.png" %}" alt="orange" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('green');" title="green" class="color"><img src="{% static "img/styleswitcher/green.png" %}" alt="green" /></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="setActiveStyleSheet('yellow');" title="yellow" class="color"><img src="{% static "img/styleswitcher/yellow.png" %}" alt="yellow" /></a>
+                    </li>
+                </ul>
+                <h4>تم سایت</h4>
+
+                <label>
+                    <input class="dark_switch" type="radio" name="color_style" id="is_light" value="light" checked="checked"/>روشن</label>
+                <label>
+                    <input class="dark_switch" type="radio" name="color_style" id="is_dark" value="dark"  />تاریک</label>
+                <br>
+
+
+            </div>
+        </div>
+        <div id="showSwitcher" class="styleSecondColor"><i class="fa fa-cog fa-spin"></i></div>
+        <!-- Live Style Switcher Ends - demo only -->
+    <!-- Wrapper Starts -->
+    <div class="wrapper">
+		<div class="container-fluid page-title post-title">
+			<div class="content-banner">
+				<h2 class="text-center">
+					<span> {{ object.titel }} </span>
+				</h2>
+				<div class="meta">
+					<span><i class="fa fa-user"></i> <a > {{ object.auther }} </a></span>
+					<span class="date"><i class="fa fa-calendar"></i>{{ object.created }}</span>
+					<span><i class="fa fa-tags"></i>{{ object.tag.all.0 }}</span>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="content">
+					<!-- Article Starts -->
+					<article>
+						<!-- Excerpt Starts -->
+						<div class="blog-excerpt">
+                            <p>{{ object.body | safe }}</p>
+							<div class="meta meta-post-content">
+								<span><i class="fa fa-user"></i> <a > {{ object.auther }} </a></span>
+								<span class="date"><i class="fa fa-calendar"></i>{{ object.created }}</span>
+								<span><i class="fa fa-tags"></i>{{ object.tag.all.first }}</span>
+
+							</div>
+							<!-- Meta Ends -->
+						</div>
+						<!-- Excerpt Ends -->
+						<!-- Comments Starts -->
+
+					</article>
+					<!-- Article Ends -->
+				</div>
+			</div>
+		</div>
+    </div>
+	</div>
+    <!-- Wrapper Ends -->
+	<!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="preloader-container">
+            <h1> مهدی </h1>
+            <div id="progress-line-container">
+                <div class="progress-line"></div>
+            </div>
+            <h1> رمضانی </h1>
+        </div>
+    </div>
+    <!-- Preloader Ends -->
+    <!-- Template JS Files -->
+        <script src="{% static "js/jquery-2.2.4.min.js" %}"></script>
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+		<script src="{% static "js/transition.js" %}"></script>
+        <!-- Live Style Switcher JS File - only demo -->
+        <script src="{% static "js/styleswitcher.js" %}"></script>
+
+        <!-- Main JS Initialization File -->
+        <script src="{% static "js/custom.js" %}"></script>
+</body>
+
+</html>

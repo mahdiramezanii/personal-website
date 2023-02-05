@@ -20,5 +20,6 @@ from config import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",include("apps.Home_app.urls"))
+    path("",include("apps.Home_app.urls")),
+    path("mag/",include("apps.Blog_app.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

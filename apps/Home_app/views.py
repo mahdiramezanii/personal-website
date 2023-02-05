@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,View
 from .models import *
 from django.http import JsonResponse
+from apps.Blog_app.models import Article
 class HomeView(View):
 
     def get(self,request):
@@ -12,12 +13,14 @@ class HomeView(View):
         working=Working.objects.all()
         maharat=Maharat.objects.all()
         work_sample=work_samples.objects.all()
+        article=Article.objects.all()[0:5]
 
         context["information"]=information
         context["eduction"]=eduction
         context["working"]=working
         context["maharat"]=maharat
         context["work_sample"]=work_sample
+        context["article"]=article
 
 
 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "apps.Home_app.apps.HomeAppConfig",
     "apps.Blog_app.apps.BlogAppConfig",
     "django_cleanup",
+    "ckeditor"
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,10 @@ MEDIA_ROOT=path.join(BASE_DIR,"media")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ckeditor config
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full'
+    }
+}

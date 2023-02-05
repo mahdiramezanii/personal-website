@@ -74,8 +74,7 @@
 
             <br>
 
-            <a href="#" class="waves-effect waves-light btn font-family-irbold  purchase hoverable"> <span><i
-                    class="fa fa-shopping-cart"></i>خرید</span></a>
+            <a href="#" class="waves-effect waves-light btn font-family-irbold  purchase hoverable"></a>
             <div id="hideSwitcher">&times;</div>
         </div>
     </div>
@@ -164,7 +163,7 @@
 							<b>توسعه دهنده Backend</b>
 						</span> هستم
                     </h1>
-                    <p> من یک طراح و توسعه دهنده مستقل آزاد مستقر در تهران ، ایران هستم. من در تلاش هستم تا از طریق کد
+                    <p> من یک طراح و توسعه دهنده مستقل آزاد مستقر در بندرعباس ، ایران هستم. من در تلاش هستم تا از طریق کد
                         دقیق و طراحی کاربر محور ، برنامه های کاربردی وب همه جانبه و زیبا بسازم. </p>
 
                     <div class="call-to-actions-home">
@@ -194,7 +193,7 @@
                         <div class="image-container">
                             <img class="img-fluid d-block" src="{{ information.image.url }}" alt=""/>
                         </div>
-                        <p class="d-block d-md-none"> من یک طراح و توسعه دهنده مستقل و مستقر در تهران ، ایران هستم. من
+                        <p class="d-block d-md-none"> من یک طراح و توسعه دهنده مستقل و مستقر در بندرعباس ، ایران هستم. من
                             در تلاش هستم تا از طریق کد دقیق و طراحی کاربر محور ، برنامه های کاربردی وب همه جانبه و زیبا
                             بسازم. </p>
                     </div>
@@ -234,13 +233,13 @@
                                 </li>
                                 <li>
                                     <h6><span class="font-family-irbold"> ایمیل </span>
-                                        mahdiramazanii.ifiicial@gmail.com </h6>
+                                        mahdiramazanii.ofiicial@gmail.com </h6>
                                 </li>
                                 <li>
                                     <h6><span class="font-family-irbold"> اینستاگرام </span> mahdiramezani.dev </h6>
                                 </li>
                                 <li>
-                                    <h6><span class="font-family-irbold"> تلگرام </span> mahdiramazani </h6>
+                                    <h6><span class="font-family-irbold"> تلگرام </span> Mahdiramazani </h6>
                                 </li>
                             </ul>
                         </div>
@@ -543,112 +542,36 @@
             </div>
             <div class="container ">
                 <div class="row ">
-                    <!-- Article Starts -->
+
+                    {% for item in article %}
                     <div class="col-12 col-sm-6 ">
                         <article>
                             <!-- Figure Starts -->
                             <figure class="blog-figure ">
-                                <a href="blog-post.html ">
-                                    <img class="img-fluid " src="{% static "img/blog/blog-post-4.jpg" %} " alt=" ">
+                                <a href="{{ item.get_absolut_url }}">
+                                    <img class="img-fluid " src="{{ item.image.url }}" alt=" ">
                                 </a>
-                                <div class="post-date "><span>23</span>
-                                    <span>دی</span>
+                                <div class="post-date "><span>{{ item.created }}</span>
+
                                 </div>
                             </figure>
                             <!-- Figure Ends -->
-                            <a href="blog-post.html ">
-                                <h4>یک موضوع وردپرس را از ابتدا ایجاد کنید </h4>
+                            <a href="{{ item.get_absolut_url }}">
+                                <h4>{{ item.titel }}</h4>
                             </a>
                             <!-- Excerpt Starts -->
                             <div class="blog-excerpt ">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است ...</p>
-                                <a href="blog-post.html " class="btn readmore "><span> بیشتر بخوانید </span></a>
+                                <p>{{ item.body | slice:"0:200" | safe }} ...</p>
+                                <a href="{{ item.get_absolut_url }}" class="btn readmore "><span> بیشتر بخوانید </span></a>
                             </div>
                             <!-- Excerpt Ends -->
                         </article>
                     </div>
-                    <!-- Article Ends -->
-                    <!-- Article Starts -->
-                    <div class="col-12 col-sm-6 ">
-                        <article>
-                            <!-- Figure Starts -->
-                            <figure class="blog-figure ">
-                                <a href="blog-post.html ">
-                                    <img class="img-fluid " src="{% static "img/blog/blog-post-1.jpg" %} " alt=" ">
-                                </a>
-                                <div class="post-date "><span>18</span>
-                                    <span>مهر</span>
-                                </div>
-                            </figure>
-                            <!-- Figure Ends -->
-                            <a href="blog-post.html ">
-                                <h4> نکات استراتژی بازاریابی موثر </h4>
-                            </a>
-                            <!-- Excerpt Starts -->
-                            <div class="blog-excerpt ">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است ...</p>
-                                <a href="blog-post.html " class="btn readmore "><span> بیشتر بخوانید </span></a>
-                            </div>
-                            <!-- Excerpt Ends -->
-                        </article>
-                    </div>
-                    <!-- Article Ends -->
-                    <!-- Article Starts -->
-                    <div class="col-12 col-sm-6 ">
-                        <article>
-                            <!-- Figure Starts -->
-                            <figure class="blog-figure ">
-                                <a href="blog-post.html ">
-                                    <img class="img-fluid " src="{% static "img/blog/blog-post-3.jpg" %} " alt=" ">
-                                </a>
-                                <div class="post-date "><span>01</span>
-                                    <span>تیر</span>
-                                </div>
-                            </figure>
-                            <!-- Figure Ends -->
-                            <a href="blog-post.html ">
-                                <h4>منابع psd و sketch رایگان </h4>
-                            </a>
-                            <!-- Excerpt Starts -->
-                            <div class="blog-excerpt ">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است ...</p>
-                                <a href="blog-post.html " class="btn readmore "><span> بیشتر بخوانید </span></a>
-                            </div>
-                            <!-- Excerpt Ends -->
-                        </article>
-                    </div>
-                    <!-- Article Ends -->
-                    <!-- Article Starts -->
-                    <div class="col-12 col-sm-6 ">
-                        <article>
-                            <!-- Figure Starts -->
-                            <figure class="blog-figure ">
-                                <a href="blog-post.html ">
-                                    <img class="img-fluid " src="{% static "img/blog/blog-post-2.jpg" %} " alt=" ">
-                                </a>
-                                <div class="post-date "><span>01</span>
-                                    <span>تیر</span>
-                                </div>
-                            </figure>
-                            <!-- Figure Ends -->
-                            <a href="blog-post.html ">
-                                <h4> چگونه به یک فریلنسر موفق تبدیل شویم </h4>
-                            </a>
-                            <!-- Excerpt Starts -->
-                            <div class="blog-excerpt ">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است ...</p>
-                                <a href="blog-post.html " class="btn readmore "><span> بیشتر بخوانید </span></a>
-                            </div>
-                            <!-- Excerpt Ends -->
-                        </article>
-                    </div>
+                    {% endfor %}
+
                     <!-- Article Ends -->
                     <!-- Link To Blog Starts -->
-                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 allposts "><a href="blog.html "
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 allposts "><a href="{% url "Blog_app:Blog" %}"
                                                                                              class="btn btn-secondary "><span><i
                             class="fa fa-comments "></i> همه پستها </span></a>
                     </div>
